@@ -1,0 +1,23 @@
+a:link {
+    color: currentColor;
+    }
+
+#meu_nome {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#quem-sou-descricao {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #D5C7C8;
+}
+
+strong {
+    color: #4E4A54;
+}
+
+.habilidade-destaque {
+    font-size: 20px;
+}
