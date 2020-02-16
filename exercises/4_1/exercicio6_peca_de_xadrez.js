@@ -1,4 +1,4 @@
-let cp;
+let cp = "Bishop";
 let cp_lc = cp.toLowerCase();
 
 switch (cp_lc) {
@@ -26,6 +26,6 @@ switch (cp_lc) {
     console.log("one square, if that square is unoccupied");
     break;
 
-    default
+    default:
     console.log("this is not a chess piece");
 }
