@@ -1,24 +1,31 @@
-let cp = "Bishop";
+let cp;
 let cp_lc = cp.toLowerCase();
 
-if (cp_lc = "king") {
+switch (cp_lc) {
+    case 'king':
     console.log("one square horizontal, vertical, or diagonal");
-}
-else if (cp_lc = "queen") {
+    break;
+
+    case 'queen':
     console.log("diagonal, horizontal, or vertical");
-}
-else if (cp_lc = "rook") {
+    break;
+
+    case 'rook':
     console.log("vertical or horizontal");
-}
-else if (cp_lc = "bishop") {
+    break;
+
+    case 'bishop':
     console.log("diagonal");
-}
-else if (cp_lc = "knight") {
+    break;
+
+    case 'knight':
     console.log("L or 7 laid out at any horizontal or vertical angle");
-}
-else if (cp_lc = "pawns") {
+    break;
+
+    case 'pawns':
     console.log("one square, if that square is unoccupied");
-}
-else {
+    break;
+
+    default
     console.log("this is not a chess piece");
 }
