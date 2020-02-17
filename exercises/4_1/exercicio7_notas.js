@@ -8,25 +8,32 @@
 // O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
 
 let nota = 88;
-
-if (nota >= 90 && nota <= 100) {
-    console.log("A");
-}
-else if (nota >= 80 && nota < 90) {
-    console.log("B");
-}
-else if (nota >= 70 && nota < 80) {
-    console.log("C");
-}
-else if (nota >= 60 && nota < 70) {
-    console.log("D");
-}
-else if (nota >= 50 && nota < 60) {
-    console.log("E");
-}
-else if (nota < 50 && nota >= 0) {
-    console.log("F");
-}
-else {
-    console.log("Valor inválido");
+ 
+switch (true) {
+   case (nota < 50):
+   console.log("F");
+   break;
+ 
+   case (nota < 60):
+   console.log("E");
+   break;
+ 
+   case (nota < 70):
+   console.log("D");
+   break;
+ 
+   case (nota < 80):
+   console.log("C");
+   break;
+ 
+   case (nota < 90):
+   console.log("B");
+   break;
+ 
+   case (nota <=100):
+   console.log("A");
+   break;
+ 
+   default:
+   console.log("Valor inválido");
 }
