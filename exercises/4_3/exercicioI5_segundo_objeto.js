@@ -11,19 +11,13 @@ let info2 = {
     nota: "O último MacPatinhas",
     recorrente: "Sim",
   };
-  
-  let key;
-  let key2;
-    for (key in info); {
-      info[key];
-    }
-    for (key2 in info2); {
-        info2[key2];
-    }
-    if (info[key] = info2[key2]) {
-        console.log("Ambos recorrentes");
+
+  for (let key in info, info2) {
+    if (info[key] == info2[key]) {
+      console.log("Ambos recorrentes");
     }
     else {
-        console.log(info[key] + " e " + info2[key2])
+      console.log(info[key] + " e " + info2[key]);
     }
-    
+  }
+  
