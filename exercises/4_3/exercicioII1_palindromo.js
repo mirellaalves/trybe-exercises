@@ -7,25 +7,23 @@ Retorno esperado: false */
 
     let palavra = "arara"
 
-function palindromo(string) {
+function verificaPalindrome(string) {
 
-    let stringVerso = string
+    let stringVerso = string;
     let i;
     let j;
 
-    for (i = 0; i <= string.length - 1; i++) {
+    for (i = 0; i < string.length; i++) {
         string[i];
     }
-
-    for (j = stringVerso.length -1; j >= 0; j--) {
+    for (j = stringVerso.length-1; j >= 0; j--) {
         stringVerso[j];
     }
-
     if (string[i] = stringVerso[j]) {
         return true;
     }
     else {
-        return false;
+    return false;
     }
 }
-console.log(palindromo(palavra));    
+console.log(verificaPalindrome(palavra));
