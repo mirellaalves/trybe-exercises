@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Lorem Ipsum</title>
+ <style>
+   .changing {
+       background-color: white;
+       color: black;
+       font-size: medium;
+       line-height: normal;
+       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   }
+   li {
+       padding-top: 20px;
+   }
+ </style>
+ <script>
+     window.onload = function() {
+         if (typeof(Storage) != "undefined") {
+           let views = Number(localStorage.getItem("views"));
+           if (views) {
+               views += 1;
+               localStorage.setItem("views", views);
+           } else {
+               localStorage.setItem("views", 1);
+           }
+         } else {
+             document.write("Sem suporte para o Web Storage");
+         }
+         let span = document.querySelector("span.views");
+         span.innerHTML = `Número de visitas: ${localStorage.views}`;
+         let color = localStorage.color;
+         if (color) document.body.style.backgroundColor = color;
+        
+         let buttons = document.querySelectorAll("button");
+       //   Erro: o for abaixo iterava sobre a length de buttons
+       //   Como não podemos adicionar event listeners a números, o script dava erro no console
+       //   for (let i in buttons) {
+         for (let i = 0; i < buttons.length ; i++) {
+           buttons[i].addEventListener("click", function(event) {
+               let color = buttons[i].innerHTML;
+               localStorage.setItem("color", color);
+               document.body.style.backgroundColor = color;
+           })
+         }
+     }
+ </script>
+</head>
+<body class="changing">
+ <header>Lorem Ipsum</header>
+ <article>
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta mauris id neque tristique scelerisque. Aliquam id neque sit amet urna laoreet tempor ac sit amet diam. Vestibulum sollicitudin ut justo sed posuere. Sed eget velit non tellus volutpat vulputate auctor eu augue. Fusce eros nunc, rhoncus eget risus nec, vulputate auctor purus. Donec a odio pulvinar, rutrum lacus eget, efficitur urna. Duis vel blandit nunc. Fusce commodo orci non erat faucibus congue. Duis aliquet ut eros quis ultrices. Suspendisse sed pellentesque felis. Sed porta id elit ac dapibus. Curabitur vel orci convallis, egestas orci in, efficitur turpis. Nullam commodo sodales eros id dignissim. Nunc nec tristique sem.</p>
+ </article>
+ <section>
+     <ul>
+         <li>Escolha a cor de fundo da tela</li>
+         <button>Branca</button> <button>Azul</button> <button>Rosa</button>
+         <li>Escolha a cor do texto</li>
+         <button>Preto</button> <button>Marinho</button> <button>Vermelho</button>
+         <li>Escolha o tamanho da fonte</li>
+         <button>Pequena</button> <button>Média</button> <button>Grande</button>
+         <li>Escolha o espaçamento entre as linhas</li>
+         <button>Curto</button> <button>Médio</button> <button>Longo</button>
+         <li>Escolha o tipo da fonte</li>
+         <button>Sans-serif</button> <button>Serif</button> <button>Monospace</button>
+     </ul>
+ </section>
+</body>
+</html>
