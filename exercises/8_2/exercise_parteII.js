@@ -43,6 +43,7 @@ console.log(allLessons);
 
 /* 6 Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em todas as aulas.*/
 
+
 /* console.log(allLessons.lesson1.numeroEstudantes + allLessons.lesson2.numeroEstudantes + allLessons.lesson3.numeroEstudantes);*/
 
 /* 7 Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto.*/
