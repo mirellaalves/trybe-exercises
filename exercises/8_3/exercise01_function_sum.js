@@ -19,4 +19,4 @@ assert.strictEqual(test1, 9, 'test1');
 const test2 = sum(0, 0);
 assert.strictEqual(test2, 0, 'test2');
 /* const test3 = sum(4, '5');
-assert.strictEqual(test3, throw new Error('parameters must be numbers'), 'test3'); */
+aassert.ifError(test3, new Error('parameters must be numbers')); */
