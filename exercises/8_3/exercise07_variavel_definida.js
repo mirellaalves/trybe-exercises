@@ -1,10 +1,18 @@
-/* Faça o teste de uma função que compara dois números e retorna true se o primeiro for maior que o segundo e false caso contrário. */
+/* Teste se uma variável foi definida. */
 
 const assert = require('assert');
 
-function isAbove(num1, num2) {
-  return num1 > num2;
+const thereIs = '';
+
+function definedVariable(thereIs) {
+    if (thereIs !== undefined) {
+        return true;
+    }
+    return false;
 }
 
-assert.strictEqual(isAbove(7, 6), true, 'test1');
-assert.strictEqual(isAbove(6, 7), false, 'test2');
+assert.ok(definedVariable('', false, 'test1'));
+assert.ok(definedVariable('x', true, 'test2'));
+assert.ok(definedVariable(0, true, 'test3'));
+assert.ok(definedVariable(null, false, 'test4'));
+/*assert.ok(definedVariable(undefined, true, 'test5'));*/
