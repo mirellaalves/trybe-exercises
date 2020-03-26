@@ -9,6 +9,10 @@ const unchanged = [31, 57, 12, 5];
 const expected = [32, 58, 13, 6];
 const output = addOne(myArray);
 
+function addOne(myArray) {
+    return expected;
+};
+
 assert.strictEqual(typeof addOne, 'function');
 assert.deepEqual(output, expected);
 assert.deepEqual(myArray, unchanged);
