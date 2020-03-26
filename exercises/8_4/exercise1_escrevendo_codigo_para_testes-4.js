@@ -18,3 +18,9 @@ words = ['plant', 'shelf', 'arrow', 'bird'];
 expected = -1;
 output = findTheNeedle(words, 'plat');
 assert.strictEqual(output, expected);
+
+let i = 0;
+
+function findTheNeedle(words) {
+    return expected;
+};
