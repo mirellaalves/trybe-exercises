@@ -2,6 +2,4 @@
 
 const assert = require('assert');
 
-function thereIs() {
-
-}
+function thereIs() {}
