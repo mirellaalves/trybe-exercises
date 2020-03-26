@@ -17,4 +17,11 @@ const obj3 = {
   description: 'My Description',
 };
 
+const obj4 = {
+  title: 'My Different Title',
+  description: 'My Description',
+};
 
+assert.deepStrictEqual(obj1, obj2);
+assert.notDeepStrictEqual(obj2, obj3);
+assert.notDeepStrictEqual(obj1, obj3);
