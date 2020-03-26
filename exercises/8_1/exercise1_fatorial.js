@@ -11,3 +11,14 @@ if (n > 0) {
 } else {
     return false;
 }
+
+/* em 1 linha:
+const fatorial = (n) => (n === 0) ? 1 : n * fatorial(n - 1);
+
+É os mesmo que:
+
+if (n === 0) {
+    return 1
+} else {
+    return n * fatorial(n - 1)
+} */
