@@ -26,7 +26,11 @@ for (let i = 1; i < 8; i += 1) {
         ataqueFeito = true;
     }
 }
-console.log(ataqueFeito);
+if (ataqueFeito) {
+    console.log('Parabens para a Rainha!');
+} else {
+    console.log('Não foi dessa vez');
+}
 
 
 /* Movimento Diagonal Inferior Esquerda */
@@ -40,7 +44,11 @@ for (let i = 1; i < 8; i += 1) {
         ataqueFeito = true;
     }
 }
-console.log(ataqueFeito);
+if (ataqueFeito) {
+    console.log('Parabens para a Rainha!');
+} else {
+    console.log('Não foi dessa vez');
+}
 
 
 /* Movimento Diagonal Superior Esquerda */
@@ -54,7 +62,11 @@ for (let i = 1; i < 8; i += 1) {
         ataqueFeito = true;
     }
 }
-console.log(ataqueFeito);
+if (ataqueFeito) {
+    console.log('Parabens para a Rainha!');
+} else {
+    console.log('Não foi dessa vez');
+}
 
 
 /* Movimento Diagonal Inferior Direita */
@@ -68,4 +80,8 @@ for (let i = 1; i < 8; i += 1) {
         ataqueFeito = true;
     }
 }
-console.log(ataqueFeito);
+if (ataqueFeito) {
+    console.log('Parabens para a Rainha!');
+} else {
+    console.log('Não foi dessa vez');
+}
