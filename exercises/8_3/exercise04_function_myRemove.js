@@ -16,11 +16,14 @@ function myRemove(arr, item) {
   return newArr;
 }
 
-const test1 = myRemove([1, 2, 3, 4], 3);
+/*const test1 = myRemove([1, 2, 3, 4], 3);
 assert.deepEqual(test1, [1, 2, 4], 'test1');
 const test2 = myRemove([1, 2, 3, 4], 3);
-assert.notDeepEqual(test2, [1, 2, 3, 4], 'test2');
-/*const test3 = myRemove([1, 2, 3, 4], [1, 2, 3, 4]);
-assert.deepEqual(test3, [1, 2, 3, 4], 'test3');*/
-const test4 = myRemove([1, 2, 3, 4], 5);
-assert.deepEqual(test4, [1, 2, 3, 4], 'test4');
+assert.notDeepEqual(test2, [1, 2, 3, 4], 'test2');*/
+
+const arr3 = [1, 2, 3, 4];
+myRemove(arr3, 3);
+assert.deepEqual(arr3, [1, 2, 3, 4]);
+
+/*const test4 = myRemove([1, 2, 3, 4], 5);
+assert.deepEqual(test4, [1, 2, 3, 4], 'test4');*/
