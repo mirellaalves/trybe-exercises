@@ -18,11 +18,14 @@ function myRemoveWithoutCopy(arr, item) {
   return arr;
 }
 
-const test1 = myRemoveWithoutCopy([1, 2, 3, 4], 3);
+/*const test1 = myRemoveWithoutCopy([1, 2, 3, 4], 3);
 assert.deepEqual(test1, [1, 2, 4], 'test1');
 const test2 = myRemoveWithoutCopy([1, 2, 3, 4], 3);
-assert.notDeepEqual(test2, [1, 2, 3, 4], 'test2');
-/*const test3 = myRemoveWithoutCopy([1, 2, 3, 4], [1, 2, 3, 4]);
-assert.notDeepEqual(test3, [1, 2, 3, 4], 'test3');*/
-const test4 = myRemoveWithoutCopy([1, 2, 3, 4], 5);
-assert.deepEqual(test4, [1, 2, 3, 4], 'test4');
+assert.notDeepEqual(test2, [1, 2, 3, 4], 'test2');*/
+
+arr = [1, 2, 3, 4];
+myRemoveWithoutCopy(arr, 3);
+assert.notDeepEqual(arr, [1, 2, 3, 4]);
+
+/*const test4 = myRemoveWithoutCopy([1, 2, 3, 4], 5);
+assert.deepEqual(test4, [1, 2, 3, 4], 'test4');*/
