@@ -84,7 +84,3 @@ books.forEach(book => {
 console.log(smallerName());
 //----------
 assert.equal(smallerName(), 'Duna');
-
-/* Fiz alguns testes:
-books.forEach(element => {if (element.id === 5) {console.log(element.name)}});
-console.log(books.find(element => element.id === 5).name); */
