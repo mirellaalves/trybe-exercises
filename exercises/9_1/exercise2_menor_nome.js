@@ -69,9 +69,22 @@ const books = [
 function smallerName() {
   let nameBook;
   // escreva aqui o seu código
-
+//----------
+books.forEach(book => {
+  if (!nameBook || book.name.length < nameBook.length) {
+    nameBook = book.name;
+  }
+  });
+//----------
   // Variável nameBook que receberá o valor do menor nome;
   return nameBook;
 }
 
+//----------
+console.log(smallerName());
+//----------
 assert.equal(smallerName(), 'Duna');
+
+/* Fiz alguns testes:
+books.forEach(element => {if (element.id === 5) {console.log(element.name)}});
+console.log(books.find(element => element.id === 5).name); */
