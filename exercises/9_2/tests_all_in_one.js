@@ -67,6 +67,14 @@ const books = [
     .map(book => book.author.name).sort());*/
 //2
 //3
-console.log(books
+/*console.log(books
     .filter(book => book.releaseYear < 1960)
-    .map(book => book.name));
+    .map(book => book.name));*/
+//4
+//5
+//6
+//console.log(books.map(book => `${book.name} - ${book.genre} - ${book.author.name}`));
+//7
+console.log(books
+    .map(book => ({author: book.author.name, age: book.releaseYear - book.author.birthYear}))
+    .sort((a, b) => a.age - b.age));
