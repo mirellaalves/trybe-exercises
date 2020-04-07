@@ -62,6 +62,11 @@ const books = [
 ];
 
 // 1
-console.log(books
+/*console.log(books
     .filter(book => book.genre === 'Ficção Científica' || book.genre === 'Fantasia')
-    .map(book => book.author.name).sort());
+    .map(book => book.author.name).sort());*/
+//2
+//3
+console.log(books
+    .filter(book => book.releaseYear < 1960)
+    .map(book => book.name));

@@ -1,5 +1,4 @@
 /* 3 Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
-
 Dica: use as funções filter e map */
 
 const assert = require('assert');
@@ -75,6 +74,10 @@ const expected_result = [
 
 function oldBooks() {
   // escreva seu código aqui
+  return books
+    .filter(book => book.releaseYear < 1960)
+    .map(book => book.name);
 }
+console.log(oldBooks());
 
 assert.deepEqual(oldBooks(), expected_result);
