@@ -1,5 +1,4 @@
 /* 5 Encontre o livro com o maior nome.
-
 Dica: Use a função reduce */
 
 const assert = require('assert');
@@ -80,6 +79,13 @@ const expected_result = {
 
 function longestNamedBook() {
   // escreva seu código aqui
-}
+  return books.reduce((acc, book) => {
+    if (acc.name.length > book.name.length) {
+      return acc;
+    }
+    return book;
+  });
+};
+console.log(longestNamedBook());
 
 assert.deepEqual(longestNamedBook(), expected_result);

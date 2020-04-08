@@ -71,10 +71,16 @@ const books = [
     .filter(book => book.releaseYear < 1960)
     .map(book => book.name));*/
 //4
-const sumAges = books.reduce((acc, book) => (acc + (book.releaseYear - book.author.birthYear)), 0);
+/*const sumAges = books.reduce((acc, book) => (acc + (book.releaseYear - book.author.birthYear)), 0);
 const numOfBooks = books.length;
-console.log(sumAges / numOfBooks);
+console.log(sumAges / numOfBooks);*/
 //5
+console.log(books.reduce((acc, book) => {
+    if (acc.name.length > book.name.length) {
+      return acc;
+    }
+    return book;
+  }));
 //6
 //console.log(books.map(book => `${book.name} - ${book.genre} - ${book.author.name}`));
 //7
