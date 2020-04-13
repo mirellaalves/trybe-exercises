@@ -10,8 +10,8 @@ const arrPromise = () => {
     (arrSumQuad < 8000) ? resolve(arrSumQuad) : reject('Maior que 8000') // é o 'result' da função.
   });
   promise
-  .then((sum) => console.log(sum))
-  .catch((error) => console.log(error));
+  .then(sum => console.log(sum))
+  .catch(error => console.log(error));
 };
 
 arrPromise();
