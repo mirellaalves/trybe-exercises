@@ -1,4 +1,4 @@
-const sum = require('./sum');
+const sum = require('./exercise01_function_sum');
 
 test('ckeck if sum is defined', () => {
     expect(typeof sum).toBe('function');
@@ -11,4 +11,3 @@ test('ckeck if sum is defined', () => {
   test('sums 0 and 0', () => {
     expect(sum(0, 0)).toEqual(0);
   });
-  
