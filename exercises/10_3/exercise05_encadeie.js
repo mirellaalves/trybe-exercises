@@ -9,7 +9,7 @@ const arrPromise = () => {
   });
     
   promise
-  .then(sum => console.log([2, 3, 5, 10].map(number => sum / number)))
+  .then(sum => [2, 3, 5, 10].map(number => sum / number))
   .then(sum2 => console.log(sum2.reduce((c, d) => c + d, 0)))
   .catch(error => console.log(error));
 };
