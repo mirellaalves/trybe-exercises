@@ -1,0 +1,1 @@
+const calcs = require('./exercise06-1_nome_do_animal')

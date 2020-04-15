@@ -1,0 +1,1 @@
+const calcs = require('./exercise06-2_idade_dos_animais')

@@ -1,0 +1,1 @@
+const calcs = require('./exercise05_adivinhar_a_saida')
