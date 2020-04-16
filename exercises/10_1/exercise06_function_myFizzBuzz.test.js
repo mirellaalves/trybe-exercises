@@ -24,5 +24,5 @@ test('num is not divisible for 3 or 5', () => {
 });
 
 test('num is not a number', () => {
-    expect(myFizzBuzz('number')).toBe(false);
+    expect(myFizzBuzz('number')).toBeFalsy();
 });
