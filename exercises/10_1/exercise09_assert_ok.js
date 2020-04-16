@@ -7,3 +7,5 @@ function change(param) {
 }
 
 // implemente seus testes aqui
+
+module.exports = change;
