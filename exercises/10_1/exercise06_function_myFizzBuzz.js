@@ -16,3 +16,5 @@ function myFizzBuzz(num) {
 }
 
 // implemente seus testes aqui
+
+module.exports = myFizzBuzz;
