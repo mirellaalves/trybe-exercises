@@ -4,16 +4,18 @@
 
 const users = {
     4: { name: 'Mark' },
-    5: { name: 'Paul' }
+    5: { name: 'Paul' },
+    6: { name: 'Ana'}
 };
     
 const findUserById = (id) => {
   return new Promise((resolve, reject) => {
+    setTimeout(() => {
       if (users[id]) {
         return resolve(users[id]);
       }
-
       return reject({ error: 'User with ' + id + ' not found.' });
+    }, 500);  // setTimeout inserido para transformar a função em uma função assíncrona.
   });
 }
     
