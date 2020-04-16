@@ -13,3 +13,9 @@ function mySum(arr) {
 }
 
 // implemente seus testes aqui
+const test1 = mySum([1, 2, 3, 4]);
+assert.strictEqual(test1, 10, 'test1');
+const test2 = mySum([1, -2, -3, 4]);
+assert.strictEqual(test2, 0, 'test2');
+
+module.exports = mySum;
