@@ -19,3 +19,4 @@ function myRemoveWithoutCopy(arr, item) {
 }
 
 // implemente seus testes aqui
+module.exports = myRemoveWithoutCopy;
