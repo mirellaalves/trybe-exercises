@@ -18,3 +18,7 @@ const obj3 = {
 };
 
 // implemente seus testes aqui
+
+module.exports = obj1;
+module.exports = obj2;
+module.exports = obj3;
