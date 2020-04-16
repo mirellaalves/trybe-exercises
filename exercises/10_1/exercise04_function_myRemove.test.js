@@ -19,11 +19,12 @@ test('[1, 2, 3, 4] parameter does not change', () => {
     expect(myRemove(myRemoveArr3)).toEqual([1, 2, 3, 4]);
 });
 
-test('[1, 2, 3, 4] parameter does not change', () => {
-    const myRemoveArr3 = [1, 2, 3, 4];
-    myRemove(myRemoveArr3, 1);
-    expect(myRemove(myRemoveArr3)).toEqual([1, 2, 3, 4]);
-});
+// Solução do gabarito:
+test('does not change the passed array', () => {
+    const arr = [1, 2, 3, 4];
+    myRemove(arr, 1);
+    expect(arr).toEqual([1, 2, 3, 4]);
+  });
 
 test('([1, 2, 3, 4], 5) parameters return [1, 2, 3, 4]', () => {
     expect(myRemove([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);

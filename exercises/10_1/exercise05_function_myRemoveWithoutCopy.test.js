@@ -20,4 +20,13 @@ test('[1, 2, 3, 4] parameter has changed', () => {
     expect(myRemoveWithoutCopy([1, 2, 3, 4])).not.toEqual(myRemoveWithoutCopyArr3);
 });
 
+// Solução do gabarito:
+test('changes the passed array', () => {
+    const arr = [1, 2, 3, 4];
+    myRemoveWithoutCopy(arr, 1);
+    expect(arr).toEqual([2, 3, 4]);
+  });
 
+test('[1, 2, 3, 4], 5 parameters return [1, 2, 4]', () => {
+    expect(myRemoveWithoutCopy([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
+});
