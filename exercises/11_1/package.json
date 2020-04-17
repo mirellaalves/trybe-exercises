@@ -3,6 +3,7 @@
     "test": "jest --watchAll"
   },
   "devDependencies": {
-    "jest": "^25.3.0"
+    "jest": "^25.3.0",
+    "node-fetch": "^2.6.0"
   }
 }
