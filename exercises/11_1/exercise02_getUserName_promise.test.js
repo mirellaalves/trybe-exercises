@@ -4,7 +4,31 @@
 
 const getUserName = require('./exercise02_getUserName_promise')
 
-test('testa se encontrou um ID', ()=> {
+// USUÁRIO ENCONTRADO
+// Com o uso do .then:
+test('testa se encontrou um ID', () => {
     expect.assertions(1);
-    getUserName(6).then(name => expect(name).toBe('Ana'))
+    return getUserName(5).then(name => 
+      expect(name).toBe('Paul'));
 });
+
+// Com o uso do .resolves:
+test('testa se encontrou um ID', () => {
+    expect.assertions(1);
+    return expect(getUserName(5)).resolves.toBe('Paul');
+});
+
+// USUÁRIO NÃO ENCONTRADO
+// Com o uso do .then:
+test('testa se não encontrou um ID', () => {
+    expect.assertions(1);
+    return getUserName(6).catch(error =>
+      expect(error).toEqual({ error: 'User with 6 not found.' })
+    );
+  });
+
+// Com o uso do .rejects:
+test('testa se não encontrou um ID', () => {
+    expect.assertions(1);
+    return expect(getUserName(6)).rejects.toEqual({ error: 'User with 6 not found.' });
+  });
