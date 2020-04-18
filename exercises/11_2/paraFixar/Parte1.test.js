@@ -26,22 +26,15 @@ test('quando a randomNumber() retorna um número par e isDivisible() recebe um d
 });
 
 // 3 Simule (mocke) dois valores para a função randomNumber() retornar e um terceiro valor default. Chame a função isDivisible() quatro vezes num mesmo teste e cheque que os retornos são conforme esperado.
-// test('simula valores para a função randomNumber()', () => {
-//   randomNumber = jest
-//   .fn()
-//   .mockReturnValue(24)
-//   .mockReturnValueOnce(14)
-//   .mockReturnValueOnce(15);
+test('simula valores para a função randomNumber()', () => {
+  randomNumber = jest
+  .fn()
+  .mockReturnValue(24)
+  .mockReturnValueOnce(14)
+  .mockReturnValueOnce(15);
 
-//   isDivisible(7);
-//   expect(isDivisible).toBeTruthy();
-
-//   isDivisible(7);
-//   expect(isDivisible).toBeTruthy();
-
-//   isDivisible(6);
-//   expect(isDivisible).toBeTruthy();
-
-//   isDivisible(4);
-//   expect(isDivisible).toBeTruthy();
-// });
+  expect(isDivisible(7)).toBeTruthy(); // randomNumber = 14 (primeira chamada)
+  expect(isDivisible(7)).toBeFalsy(); // randomNumber = 15 (segunda chamada)
+  expect(isDivisible(6)).toBeTruthy(); // randomNumber = 24 (demais chamadas, chamada padrão)
+  expect(isDivisible(5)).toBeFalsy(); // randomNumber = 24 (demais chamadas, chamada padrão)
+});
