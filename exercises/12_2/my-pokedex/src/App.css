@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  text-align: center;
+}
+
+.pokemon {
+  background-color: yellow;
+  border: 1px black;
+  min-width: 200px;
+}
