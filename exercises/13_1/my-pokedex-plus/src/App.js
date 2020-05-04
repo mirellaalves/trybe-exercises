@@ -8,10 +8,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {pokemonIndex: 0,}
+    this.setNextPokemon = this.setNextPokemon.bind(this);
   }
 
   setNextPokemon() {
-    this.setState({ pokemonIndex: (this.state.pokemonIndex + 1) });
+    console.log('Novo índice do Pokemon:', (this.state.pokemonIndex + 1));
+    this.setState({ pokemonIndex: (this.state.pokemonIndex + 1),});
   }
 
   render () {
@@ -19,7 +21,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <h1 class="title">Pokedex</h1>
+        <h1 className="title">Pokedex</h1>
         <div className="App">
           <Pokemon pokemon={pokemon2} />
         </div>
