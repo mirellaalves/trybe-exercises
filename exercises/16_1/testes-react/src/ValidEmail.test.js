@@ -18,7 +18,8 @@ test('Testando um componente, caso o email seja inválido.', () => {
 
 test('Testando um componente, caso o email não tenha sido digitado.', () => {
   const EMAIL_USER = '';
-  const { getByText } = render(<ValidEmail email={EMAIL_USER} />);
-  const isValid = getByText('');
-  expect(isValid).toBeInTheDocument();
+  const { getByTestId } = render(<ValidEmail email={EMAIL_USER} />);
+  const isComponent = getByTestId('id-valid-email');
+  expect(isComponent).toBeInTheDocument();
+  expect(isComponent.textContent).toBe('');
 });

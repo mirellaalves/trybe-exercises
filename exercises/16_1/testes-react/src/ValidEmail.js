@@ -12,15 +12,15 @@ const ValidEmail = (props) => {
   if (email === '') {
     inputCondition = '';
   } else if (verifyEmail(email)) {
-    inputCondition = <h3>Email Valido</h3>;
+    inputCondition = 'Email Valido';
   } else {
-    inputCondition = <h3>Email Inválido</h3>;
+    inputCondition = 'Email Inválido';
   }
   
   return (
     <div>
       <h2 data-testid="id-email-user">{`Valor: ${email}`}</h2>
-      {inputCondition}
+      <h3 data-testid="id-valid-email">{inputCondition}</h3>
     </div>
   );
 };
