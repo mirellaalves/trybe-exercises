@@ -13,12 +13,18 @@
       <input id="decrement-value" type='number' />
       <button id="decrement">-</button>
       <button id="multi">Incrementa 10</button>
+      <!-- Click counter <span id="click-counter">0</span> -->
     </div>
   </body>
   <script>
 
     const INCREMENT = 'INCREMENT';
     const DECREMENT = 'DECREMENT';
+
+    // const STATES = {
+    //   counter: 0,
+    //   clickCounter: 0,
+    // }
 
     function counterReducer(state = 0, action) {
       console.log('ação foi disparada')
@@ -35,7 +41,7 @@
     const store = Redux.createStore(counterReducer);
 
     document.getElementById('increment')
-      .addEventListener('click', (e) => {
+      .addEventListener('click', () => {
         store.dispatch({ type: INCREMENT, value: document.getElementById("increment-value").value });
       }
     );
@@ -53,6 +59,7 @@
     );
 
     store.subscribe(() => document.getElementById('value').innerHTML = store.getState());
+    // store.subscribe(() => document.getElementById('click-counter').innerHTML = store.getState());
 
   </script>
 </html>
