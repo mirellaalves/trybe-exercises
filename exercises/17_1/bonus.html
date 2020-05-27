@@ -8,7 +8,9 @@
     <h1>Redux counter</h1>
     <div>
       Current counter <span id="value">0</span>
+      <input id="increment-value" type='number' />
       <button id="increment">+</button>
+      <input id="decrement-value" type='number' />
       <button id="decrement">-</button>
       <button id="multi">Incrementa 10</button>
     </div>
@@ -22,9 +24,9 @@
       console.log('ação foi disparada')
       switch (action.type) {
         case INCREMENT:
-          return state + action.value;
+          return state + parseFloat(action.value);
         case DECREMENT:
-          return state - action.value;
+          return state - parseFloat(action.value);
         default:
           return state;
       }
@@ -33,14 +35,14 @@
     const store = Redux.createStore(counterReducer);
 
     document.getElementById('increment')
-      .addEventListener('click', () => {
-        store.dispatch({ type: INCREMENT, value: 1 });
+      .addEventListener('click', (e) => {
+        store.dispatch({ type: INCREMENT, value: document.getElementById("increment-value").value });
       }
     );
 
     document.getElementById('decrement')
       .addEventListener('click', () => {
-        store.dispatch({ type: DECREMENT, value: 1 });
+        store.dispatch({ type: DECREMENT, value: document.getElementById("decrement-value").value });
       }
     );
 
