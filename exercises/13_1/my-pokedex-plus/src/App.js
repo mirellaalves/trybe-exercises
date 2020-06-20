@@ -12,8 +12,8 @@ class App extends React.Component {
   }
 
   setNextPokemon() {
-    if (this.state.pokemonIndex == 8) {
-      return (this.setState({ pokemonIndex: 0}));
+    if (this.state.pokemonIndex == pokemons.length -1) {
+      return (this.setState({ pokemonIndex: 0 }));
     } (this.setState({ pokemonIndex: (this.state.pokemonIndex + 1),}));
   }
 
