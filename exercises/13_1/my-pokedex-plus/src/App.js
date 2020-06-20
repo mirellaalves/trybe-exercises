@@ -12,8 +12,9 @@ class App extends React.Component {
   }
 
   setNextPokemon() {
-    console.log('Novo índice do Pokemon:', (this.state.pokemonIndex + 1));
-    this.setState({ pokemonIndex: (this.state.pokemonIndex + 1),});
+    if (this.state.pokemonIndex == 8) {
+      return (this.setState({ pokemonIndex: 0}));
+    } (this.setState({ pokemonIndex: (this.state.pokemonIndex + 1),}));
   }
 
   render () {
