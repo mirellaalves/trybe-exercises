@@ -1,0 +1,35 @@
+body {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 620px) {
+  div.pokemon {
+    width: 100%;
+  }
+}
+
+.App {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 800px;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.pokemon {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5px;
+  width: 48%;
+  min-width: 300px;
+}
