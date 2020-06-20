@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Button extends React.Component {
+class NextButton extends React.Component {
     render() {
         return (
             <button onClick = {() => { this.props.handleClick(this.props.pokemon); }}>Next Pokémon</button>
@@ -8,4 +8,4 @@ class Button extends React.Component {
     }
 }
 
-export default Button;
+export default NextButton;

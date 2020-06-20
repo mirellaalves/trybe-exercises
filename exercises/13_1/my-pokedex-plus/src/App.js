@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import pokemons from './data';
 import Pokemon from './Pokemon';
-import Button from './Button';
+import NextButton from './NextButton';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class App extends React.Component {
   }
 
   setNextPokemon() {
-    if (this.state.pokemonIndex == pokemons.length -1) {
+    if (this.state.pokemonIndex === pokemons.length -1) {
       return (this.setState({ pokemonIndex: 0 }));
     } (this.setState({ pokemonIndex: (this.state.pokemonIndex + 1),}));
   }
@@ -26,7 +26,7 @@ class App extends React.Component {
         <div className="App">
           <Pokemon pokemon={pokemon2} />
         </div>
-        <Button handleClick={this.setNextPokemon} />
+        <NextButton handleClick={this.setNextPokemon} />
       </div>
     )
   }
