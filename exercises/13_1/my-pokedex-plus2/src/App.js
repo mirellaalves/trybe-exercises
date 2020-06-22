@@ -3,12 +3,17 @@ import './App.css';
 import pokemons from './data';
 import Pokemon from './Pokemon';
 import NextButton from './NextButton';
+import FireButton from './FireButton';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {pokemonIndex: 0,}
+    this.state = {
+      pokemonIndex: 0,
+      pokemonType: '',
+    }
     this.setNextPokemon = this.setNextPokemon.bind(this);
+    this.setNextTypePokemon = this.setNextPokemon.bind(this);
   }
 
   setNextPokemon() {
@@ -17,8 +22,16 @@ class App extends React.Component {
     } (this.setState({ pokemonIndex: (this.state.pokemonIndex + 1),}));
   }
 
+  setNextTypePokemon() {
+    const {pokemons} = this.props;
+    const {filteredType} = this.state;
+
+    return pokemons.filter(pokemon => pokemon.type === filteredType)
+  }
+
   render () {
     const pokemon2 = pokemons[this.state.pokemonIndex];
+    const type = pokemons.map(pokemon => pokemon.type === 'fire')
 
     return (
       <div>
@@ -26,7 +39,12 @@ class App extends React.Component {
         <div className="App">
           <Pokemon pokemon={pokemon2} />
         </div>
-        <NextButton handleClick={this.setNextPokemon} />
+        <div className='type-ctn'>
+          <FireButton handleClick={() => this.setNextTypePokemon(this.props.pokemon)} />
+        </div>
+        <div className='next-ctn'>
+          <NextButton handleClick={this.setNextPokemon} />
+        </div>
       </div>
     )
   }

@@ -33,3 +33,25 @@ body {
   width: 48%;
   min-width: 300px;
 }
+
+.next-ctn {
+  display: flex;
+  justify-content: center;
+}
+
+.next-btn {
+  background-color: green;
+  height: 60px;
+  width: 80px;
+}
+
+.type-ctn {
+  display: flex;
+  justify-content: center;
+}
+
+.type-btn {
+  background-color: orange;
+  height: 40px;
+  width: 60px;
+}
