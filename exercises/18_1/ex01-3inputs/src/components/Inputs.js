@@ -16,7 +16,8 @@ class Inputs extends Component {
   }
 
   insertNum1(event) {
-    this.setState({ input1: event.target.value });
+    const n1 = this.setState({ input1: event.target.value });
+    return n1;
   }
 
   insertNum2(event) {
@@ -27,14 +28,25 @@ class Inputs extends Component {
     this.setState({ input3: event.target.value });
   }
 
-  // sum() {
-  //   const sumNumbers = input1.value + input2.value + input3.value;
-  //   return (
-  //     <div>
-  //       <p>{ sumNumbers }</p>
-  //     </div>
-  //   )
-  // }
+  sum() {
+    const n1 = parseFloat(this.state.input1);
+    const n2 = parseFloat(this.state.input2);
+    const n3 = parseFloat(this.state.input3);
+
+    const sumNumbers = n1 + n2 + n3;
+
+    if (this.state.input1 === '' || this.state.input2 === '' || this.state.input3 === '') {
+      return (
+        <div>
+          <p>Preencha todos os campos com um número</p>
+        </div>
+      )
+    } return (
+        <div>
+          <p>A soma dos números é { sumNumbers }.</p>
+        </div>
+    )
+  }
 
   render() {
     return (
@@ -49,7 +61,7 @@ class Inputs extends Component {
         <label htmlFor="input3">
         <input type="text" id="input3" placeholder="Digite um valor" value={this.state.input3} onChange={this.insertNum3} />
         </label>
-        {/* { this.sum() } */}
+        {this.sum()}
       </form>
     )
   }
