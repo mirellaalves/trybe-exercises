@@ -16,8 +16,7 @@ class Inputs extends Component {
   }
 
   insertNum1(event) {
-    const n1 = this.setState({ input1: event.target.value });
-    return n1;
+    this.setState({ input1: event.target.value });
   }
 
   insertNum2(event) {
@@ -50,7 +49,7 @@ class Inputs extends Component {
 
   render() {
     return (
-      
+
       <form>
         <label htmlFor="input1">
         <input type="text" id="input1" placeholder="Digite um valor" value={this.state.input1} onChange={this.insertNum1} />
