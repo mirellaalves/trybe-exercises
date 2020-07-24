@@ -1,1 +1,31 @@
 CREATE DATABASE IF NOT EXISTS db_albuns;
+
+USE db_albuns;
+
+CREATE TABLE estilo(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE artista(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE album(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	titulo VARCHAR(100) NOT NULL,
+	preco DECIMAL(9, 2) NOT NULL,
+  estilo_id INT NOT NULL,
+  artista_id INT NOT NULL,
+  FOREIGN KEY (estilo_id) REFERENCES estilo(id),
+  FOREIGN KEY (artista_id) REFERENCES artista(id)
+);
+
+CREATE TABLE cancao(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(100) NOT NULL,
+  album_id INT NOT NULL,
+  FOREIGN KEY (album_id) REFERENCES album(id)
+);
+
