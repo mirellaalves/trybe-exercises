@@ -1,0 +1,1 @@
+// Exercício 3: Remova a categoria "action" do filme Batman.
