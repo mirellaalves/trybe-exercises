@@ -1,0 +1,1 @@
+// Utilizando o operador $text, busque por filmes que contenham a frase "when he is accidentally".
