@@ -1,0 +1,15 @@
+{
+  "name": "calcula-imc",
+  "version": "1.0.0",
+  "description": "Calcula o IMC (Indice de Massa Corporal) de uma pessoa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Mirella Alves <mirella.alves@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
