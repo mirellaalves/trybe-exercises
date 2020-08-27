@@ -1,0 +1,15 @@
+{
+  "name": "exercises_27_1",
+  "version": "1.0.0",
+  "description": "Trybe exercises block 27_1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mirella Alves <mirella.alves@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
