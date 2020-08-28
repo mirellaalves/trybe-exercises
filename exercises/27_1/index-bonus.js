@@ -1,4 +1,3 @@
-const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
@@ -36,9 +35,6 @@ app.all('*', (_req, res) => {
 app.listen(3000, () => {
   console.log('Ouvindo a porta 3000!')
 });
-
-
-
 
 // Bônus
 // 1 Caso algum endpoint que não consta nessa lista receber uma requisição, a resposta deve voltar com status 404 Not Found, sem corpo.
