@@ -7,6 +7,10 @@ const app = express();
 app.use(bodyParser.json());  // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({extended: true}));  // to support URL-encoded bodies
 
+app.listen(3000, () => {
+  console.log('Ouvindo a porta 3000!')
+});
+
 // 2 Crie uma aplicação express que receba uma requisição do tipo GET no caminho /ping e retorne o JSON { "message": "Pong!" }.
 app.get('/ping', (_req, res) => {
   res.status(200).json({ message: 'Pong!' });

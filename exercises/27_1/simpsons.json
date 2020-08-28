@@ -1,6 +1,3 @@
-// 6 Agora você vai criar uma API de listagem dos personagens da série Simpsons. Como fonte de dados, você vai utilizar um arquivo JSON.
-// Crie um arquivo chamado simpsons.json e popule com os seguintes dados:
-
 [
   {
   "id": "1",

@@ -4,7 +4,8 @@
   "description": "Trybe exercises block 27_1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "Mirella Alves <mirella.alves@gmail.com>",
   "license": "ISC",
