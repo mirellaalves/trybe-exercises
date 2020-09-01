@@ -27,8 +27,8 @@ const simpsons = 'simpsons.json';
 //   res.status(200).json(file);
 // });
 
-app.get('/simpsons', async (_req, res) => {
-  await fs.readFile(simpsons, 'utf-8', (err, data) => {
+app.get('/simpsons', (_req, res) => {
+  fs.readFile(simpsons, 'utf-8', (err, data) => {
     if (err) throw err;
     file = JSON.parse(data);
     res.status(200).send(file);
@@ -65,15 +65,13 @@ app.post('/simpsons', (req, res) => {
   const id = req.body.id;
   const name = req.body.name;
   newData = [...file, { id, name }];
-  if (!id || !name) res.status(400).json({ message: 'Missing Data' });
+  if (!id || !name) return res.status(400).json({ message: 'Missing Data' });
   const idExists = file.some(character => character.id === id);
-  if (idExists) res.status(400).json({ message: 'Id already exists' });
-  const result = fs.writeFile(simpsons, JSON.stringify(newData), (err) => {
+  if (idExists) return res.status(400).json({ message: 'Id already exists' });
+  fs.writeFile(simpsons, JSON.stringify(newData), (err) => {
     if (err) throw err;
-    console.log('fff');
+    res.status(200).send('Character created');
   });
-  console.log('aaaa');
-  res.status(200).json(result);
 });
 
 app.use((err, _req, res, _next) => {
