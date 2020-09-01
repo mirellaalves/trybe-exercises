@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Mirella Alves <mirella.alves@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }

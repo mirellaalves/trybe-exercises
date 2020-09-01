@@ -23,7 +23,7 @@ app.post('/hello', (req, res) => {
 });
 
 // 4 Crie um endpoint que receba requisições do tipo POST no caminho /hello, contendo o JSON { "name": "<nome do usuário>", "age": "<idade do usuário>" }. Caso o usuário tenha idade superior a 17 anos retorne um JSON { "message": "Hello, <nome do usuário>!" } com o status code 200. Caso contrário, retorne o JSON { "message": "Unauthorized"} com o status code 401;
-app.post('/hello', (req, res) => {
+app.post('/hello2', (req, res) => {
   const name = req.body.name;
   const age = req.body.age;
   if (age > 17) {
