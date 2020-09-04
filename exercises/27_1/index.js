@@ -14,6 +14,7 @@ const crypto = require('crypto');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 // 7 Crie um endpoint do tipo GET na rota /simpsons que deve retornar a lista completa de personagens.
 const simpsons = 'simpsons.json';
@@ -65,32 +66,34 @@ function generateToken () {
   return crypto.randomBytes(8).toString('hex');
 };
 
-const authMiddleware = (req, res, next) => {
+const authMiddleware = (req, res, _next) => {
   const {token} = req.headers;
-  if (token && token.length === 16) return next();
+  if (token && token.length === 16)
+  res.status(200).json({ authorization: token });
   return res.status(401).json({ message: 'Token inválido!' });
-};
+}; // NÃO ENTENDI O QUE DEVE FAZER
 
 app.use('/simpsons', authMiddleware);
 
-app.post('/signup', (req, res) => {
+app.post('/signup', (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
   const firstName = req.body.firstName;
   const phone = req.body.phone;
-  if (email !== '' && password !== '' && firstName !== '' && phone !== '') {
-    res.status(200).json({ token: {generateToken} });
+  if (email && password && firstName && phone) {
+    res.status(200).json({ token: generateToken() });
   }
-});
+  next();
+}); // FALTA UMA RESPOSTA DE ERRO; SE COLOCO next(), RETORNA A MENSAGEM 'Not Found', MAS ACREDITO QUE DEVERIA VOLTAR A MENSAGEM 'Internal Server Error'.
 
 app.use((err, _req, res, _next) => {
   console.error(err);
-  res.status(500).json({ error: err.message });
-});
+  res.status(500).json({ error: 'Internal Server Error' });
+});  // NÃO CONSEGUI VERIFICAR
 
 app.all('*', (_req, res) => {
   res.status(404).json({ message: 'Not Found' });
-});
+}); // NÃO ENTENDI O QUE É "SEM CORPO".
 
 app.listen(3000, () => {
   console.log('Ouvindo a porta 3000!')
