@@ -14,35 +14,43 @@ const crypto = require('crypto');
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
 
 // 7 Crie um endpoint do tipo GET na rota /simpsons que deve retornar a lista completa de personagens.
 const simpsons = 'simpsons.json';
 
-app.get('/simpsons', (_req, res) => {
-  fs.readFile(simpsons, 'utf-8', (err, data) => {
-    if (err) throw err;
-    file = JSON.parse(data);
-    res.status(200).send(file);
-  });
+const readFile = async () => {
+  try {
+    const data = await fs.readFileSync(simpsons, 'utf-8');
+    const file = JSON.parse(data);
+    return file;
+  } catch(err) {
+    throw err;
+  }
+}
+
+app.get('/simpsons', async (_req, res) => {
+    const getFile = await readFile();
+    res.status(200).send(getFile);
 });
 
 // 8 Crie um endpoint do tipo GET na rota /simpsons/:id que deve retornar apenas o personagem com o id informado na URL da requisição.
 // Caso não exista nenhum personagem com o id especificado, deve ser retornado um array vazio.
 
-app.get('/simpsons/:id', (req, res) => {
+app.get('/simpsons/:id', async (req, res) => {
   const id = req.params.id;
+  const file = await readFile();
   const nameAsId = file.find(character => character.id === id);
   res.status(200).send(nameAsId.name);
-});
+});  // FALTA RETORNAR ARRAY VAZIO SE ID NÃO EXISTIR
 
 // 9 Crie um endpoint do tipo POST na rota /simpsons que será responsável por cadastrar novos personagens.
 // O corpo da requisição deve receber os campos id e name;
 // Bônus: A operação só deve ser realizada caso o campo id seja único. Caso contrário, deve ser retornado status 400.
 
-app.post('/simpsons', (req, res) => {
+app.post('/simpsons', async (req, res) => {
   const id = req.body.id;
   const name = req.body.name;
+  const file = await readFile();
   newData = [...file, { id, name }];
   if (!id || !name) return res.status(400).json({ message: 'Missing Data' });
   const idExists = file.some(character => character.id === id);
@@ -55,7 +63,7 @@ app.post('/simpsons', (req, res) => {
 
 function generateToken () {
   return crypto.randomBytes(8).toString('hex');
-}
+};
 
 const authMiddleware = (req, res, next) => {
   const {token} = req.headers;
