@@ -36,7 +36,10 @@ const getCatById = async (id) =>
         .execute()
     )
     .then((results) => results.fetchAll()[0]) // o [0] é pra pegar o primeiro resultado que aparecer
-    .then(([name, age]) => ({ name, age }));  // como results retorna só um gato, não precisa fazer o map, é só transformar direto o array em objeto
+    .then(([name, age]) => ({ name, age }))  // como results retorna só um gato, não precisa fazer o map, é só transformar direto o array em objeto
+    .catch((err) => {
+      console.error(err);  // retorna uma mensagem de erro
+    });
 
 const add = (name, age) =>
   connection()

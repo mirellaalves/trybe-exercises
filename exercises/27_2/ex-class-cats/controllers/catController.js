@@ -7,13 +7,10 @@ const listCats = async (_req, res) => {
 
 const catDetails = async (req, res) => {
   const { id } = req.params
-
   const cat = await Cats.getCatById(id);
-
   if (!cat) {
     return res.status(400).render('notFound')
   }
-
   res.render('catDetails', { cat, message: null });
 };
 
