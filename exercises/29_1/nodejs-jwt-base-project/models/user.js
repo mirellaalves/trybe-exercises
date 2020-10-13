@@ -1,15 +1,11 @@
-const mongoose = require('mongoose');
+const connect = require('./connection');
 
-const UserSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    unique: true,
-    required: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-});
+const registerUser = async (username, password) =>
+  connect().then((db) =>
+    db.collection('users').insertOne({ username, password })
+  ).then(result => result.ops[0].username );
 
-module.exports = mongoose.model('User', UserSchema);
+const findUser = async (username) =>
+  connect().then((db) => db.collection('users').findOne({ username }));
+
+module.exports = { registerUser, findUser };
